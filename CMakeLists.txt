@@ -33,11 +33,8 @@ target_link_libraries(obs-pipewire-extended PRIVATE
     ${PIPEWIRE_LIBRARIES}
 )
 
-# Installation paths
-if(NOT DEFINED OBS_PLUGIN_DESTINATION)
-    set(OBS_PLUGIN_DESTINATION /usr/lib/obs-plugins)
-endif()
-
+# Installation — respects CMAKE_INSTALL_PREFIX and DESTDIR for packaging
+include(GNUInstallDirs)
 install(TARGETS obs-pipewire-extended
-    LIBRARY DESTINATION ${OBS_PLUGIN_DESTINATION}
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/obs-plugins
 )
