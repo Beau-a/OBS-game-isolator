@@ -9,7 +9,7 @@ license=('GPL-2.0-or-later')
 depends=('obs-studio' 'pipewire' 'wireplumber')
 makedepends=('cmake' 'pkgconf')
 source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
-sha256sums=('PLACEHOLDER')
+sha256sums=('ad3f797732e8c27106b2e334a11d868a1290a21fe28eaf797b8b301239392b2f')
 
 build() {
     cmake -B build -S "OBS-game-isolator-$pkgver" \
